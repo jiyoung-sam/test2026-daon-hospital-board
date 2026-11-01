@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 및 회원가입 | 다온한방병원</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">다</span><span><strong>다온한방병원</strong><small>DAON KOREAN MEDICINE HOSPITAL</small></span></a>
+    <a class="button button-outline button-small" href="index.html">게시판으로</a>
+  </div></header>
+  <main class="auth-main container">
+    <div class="auth-intro"><p class="eyebrow">MEMBER SERVICE</p><h1>회원 서비스</h1><p>로그인 후 게시글 작성과 댓글 기능을 이용할 수 있습니다.</p></div>
+    <section class="auth-card">
+      <div class="auth-tabs">
+        <button class="tab-button active" data-auth-tab="login">로그인</button>
+        <button class="tab-button" data-auth-tab="signup">회원가입</button>
+      </div>
+      <form id="loginForm" class="form-stack">
+        <label>이메일<input type="email" id="loginEmail" autocomplete="email" required placeholder="name@example.com"></label>
+        <label>비밀번호<input type="password" id="loginPassword" autocomplete="current-password" required minlength="6" placeholder="비밀번호 입력"></label>
+        <button class="button button-primary button-full" type="submit">로그인</button>
+      </form>
+      <form id="signupForm" class="form-stack" hidden>
+        <label>이름 또는 닉네임<input type="text" id="signupName" required maxlength="30" placeholder="게시판에 표시할 이름"></label>
+        <label>이메일<input type="email" id="signupEmail" autocomplete="email" required placeholder="name@example.com"></label>
+        <label>비밀번호<input type="password" id="signupPassword" autocomplete="new-password" required minlength="8" placeholder="8자 이상 입력"></label>
+        <button class="button button-primary button-full" type="submit">회원가입</button>
+        <p class="form-help">가입 후 이메일 인증이 필요한 경우, 받은 메일의 인증 링크를 눌러 주세요.</p>
+      </form>
+      <div id="authMessage" class="message" role="status"></div>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

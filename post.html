@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 | 다온한방병원</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">다</span><span><strong>다온한방병원</strong><small>DAON KOREAN MEDICINE HOSPITAL</small></span></a>
+    <div class="header-actions"><span id="userStatus" class="user-status"></span><a id="loginLink" class="button button-outline button-small" href="login.html">로그인</a><button id="logoutButton" class="button button-outline button-small" hidden>로그아웃</button></div>
+  </div></header>
+  <main class="container content-main">
+    <a class="back-link" href="index.html">← 게시판 목록</a>
+    <section class="editor-card">
+      <p class="eyebrow">COMMUNITY</p><h1 id="editorHeading">새 게시글 작성</h1>
+      <form id="postForm" class="form-stack">
+        <label>제목<input id="postTitle" type="text" maxlength="120" required placeholder="제목을 입력하세요"></label>
+        <label>내용<textarea id="postContent" rows="12" required maxlength="10000" placeholder="게시글 내용을 입력하세요."></textarea></label>
+        <label class="file-field">이미지 첨부 <input id="postImage" type="file" accept="image/jpeg,image/png,image/webp"></label>
+        <p class="form-help">JPG, PNG, WEBP 이미지 1개 · 최대 5MB</p>
+        <div id="existingImage" class="existing-image"></div>
+        <label id="noticeOption" class="check-label" hidden><input id="isNotice" type="checkbox"> 공지사항으로 등록</label>
+        <div class="form-actions"><a class="button button-outline" href="index.html">취소</a><button class="button button-primary" type="submit">저장하기</button></div>
+      </form>
+      <div id="postMessage" class="message" role="status"></div>
+    </section>
+    <section id="postDetail" class="detail-card" hidden>
+      <div id="detailContent"></div>
+      <div class="form-actions"><a class="button button-outline" href="index.html">목록으로</a><div id="ownerActions" class="inline-actions" hidden><a id="editPost" class="button button-outline" href="#">수정</a><button id="deletePost" class="button button-danger">삭제</button></div></div>
+      <div class="comment-section"><h2>댓글 <span id="commentCount">0</span></h2>
+        <form id="commentForm" class="comment-form"><label class="sr-only" for="commentInput">댓글 입력</label><textarea id="commentInput" rows="3" maxlength="1000" placeholder="댓글을 입력하세요." required></textarea><button class="button button-primary" type="submit">댓글 등록</button></form>
+        <div id="commentList" class="comment-list"></div>
+      </div>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script type="module" src="js/post.js"></script>
+</body>
+</html>

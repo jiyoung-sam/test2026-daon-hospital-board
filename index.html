@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="다온한방병원 고객 소통 게시판">
+  <title>고객 소통 게시판 | 다온한방병원</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">다</span><span><strong>다온한방병원</strong><small>DAON KOREAN MEDICINE HOSPITAL</small></span></a>
+      <nav class="main-nav" aria-label="주요 메뉴">
+        <a href="index.html" class="active">고객 소통</a>
+        <a href="admin.html" id="adminNav" hidden>관리자</a>
+      </nav>
+      <div class="header-actions">
+        <span id="userStatus" class="user-status">로그인 상태 확인 중</span>
+        <a id="loginLink" class="button button-outline button-small" href="login.html">로그인</a>
+        <button id="logoutButton" class="button button-outline button-small" hidden>로그아웃</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">COMMUNITY</p>
+          <h1>고객 소통 게시판</h1>
+          <p>다온한방병원의 새로운 소식과 건강 정보를 확인하세요.</p>
+        </div>
+        <div class="hero-symbol" aria-hidden="true">多</div>
+      </div>
+    </section>
+
+    <section class="container board-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">NOTICE & NEWS</p><h2>게시판</h2></div>
+        <a class="button button-primary" href="post.html">글쓰기 <span aria-hidden="true">＋</span></a>
+      </div>
+
+      <div class="board-toolbar">
+        <div class="board-tabs" role="group" aria-label="게시글 종류">
+          <button class="tab-button active" data-filter="all">전체</button>
+          <button class="tab-button" data-filter="notice">공지사항</button>
+          <button class="tab-button" data-filter="general">일반 게시글</button>
+        </div>
+        <form id="searchForm" class="search-form">
+          <label class="sr-only" for="searchInput">게시글 검색</label>
+          <input id="searchInput" type="search" placeholder="제목 또는 내용 검색">
+          <button class="button button-dark button-small" type="submit">검색</button>
+        </form>
+      </div>
+
+      <div class="board-meta"><span id="postCount">게시글을 불러오는 중입니다.</span><span>최신 게시글 순</span></div>
+      <div id="postList" class="post-list" aria-live="polite">
+        <div class="loading-state">게시글을 불러오고 있습니다...</div>
+      </div>
+      <div id="emptyState" class="empty-state" hidden>등록된 게시글이 없습니다.</div>
+      <div id="boardMessage" class="message" role="status"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>다온한방병원</strong><p>건강한 일상을 위한 따뜻한 진료</p></div>
+      <p>본 게시판은 병원 안내 및 고객 소통을 위한 공간입니다.<br>개인정보 및 민감한 진료정보는 게시글에 작성하지 마세요.</p>
+      <small>© 2026 DAON Korean Medicine Hospital. Demo project.</small>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script type="module" src="js/board.js"></script>
+</body>
+</html>
